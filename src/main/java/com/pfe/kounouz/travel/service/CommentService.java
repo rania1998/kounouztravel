@@ -6,12 +6,12 @@ import com.pfe.kounouz.travel.entitie.Comment;
 
 public interface CommentService {
 
-	public void deleteCommentaire(Comment Commentaire);
+	public void deleteComment(Comment Comment);
 
-	public List<Comment> findAllCommentaire();
+	public List<Comment> findAllComment();
 
-	public Comment findOneCommentaire(Long id);
+	public Comment findOneComment(Long id);
 
-	public Comment saveCommentaire(Comment Commentaire);
+	public Comment saveComment(Comment Comment);
 
 }

@@ -37,13 +37,13 @@ public class AuthController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<LoginResponse> authenticateUser(@RequestBody LoginRequest loginRequest) {
 		try {
-			if (loginRequest.getLogin().isEmpty() || loginRequest.getHashedPassword().isEmpty()) {
+			if (loginRequest.getLogin().isEmpty() || loginRequest.getPassword().isEmpty()) {
 				throw new BadRequestException("MISSING_REQUIRED_DATA_LOGIN_PASSWORD");
 			}
 
 			String jwt = null;
 				Authentication authentication = authenticationManager.authenticate(
-						new UsernamePasswordAuthenticationToken(loginRequest.getLogin(), loginRequest.getHashedPassword()));
+						new UsernamePasswordAuthenticationToken(loginRequest.getLogin(), loginRequest.getPassword()));
 				User userPrincipal =(User) authentication.getPrincipal();
 
 				jwt = Jwts.builder().setSubject(userPrincipal.getUsername()).setIssuedAt(new Date())

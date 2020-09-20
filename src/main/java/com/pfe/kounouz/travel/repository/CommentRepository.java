@@ -8,6 +8,6 @@ import com.pfe.kounouz.travel.entitie.Comment;
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
-	Comment findCommentaireById(long id);
+	Comment findCommentById(long id);
 
 }

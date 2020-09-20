@@ -1,12 +1,15 @@
 package com.pfe.kounouz.travel.entitie;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,8 +27,8 @@ public class Offer {
 	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "name_offer")
-	private String name_offer;
+	@Column(name = "name_offers")
+	private String name_offers;
 
 	@Column(name = "begin_date")
 	private Date begin_date;
@@ -44,8 +47,12 @@ public class Offer {
 
 	@Column(name = "quantity")
 	private int quantity;
+	
+	@ManyToMany
+	 private List<Reservation> Reservation ;
 
-	@Column(name = "ranges")
-	private int ranges;
+	@OneToOne
+	private UnderCategory underCategory ;
+
 
 }

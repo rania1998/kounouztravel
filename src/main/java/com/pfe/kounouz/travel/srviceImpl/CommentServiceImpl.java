@@ -13,26 +13,28 @@ import com.pfe.kounouz.travel.service.CommentService;
 public class CommentServiceImpl implements  CommentService{
 
 	@Autowired
-    CommentRepository CommentaireRepository ;
+    CommentRepository CommentRepository ;
 	@Override
-	public void deleteCommentaire(Comment Commentaire) {
-		CommentaireRepository.delete(Commentaire);
+	public void deleteComment(Comment Comment) {
+		CommentRepository.delete(Comment);
 		
 	}
 
+
 	@Override
-	public List<Comment> findAllCommentaire() {
-		return CommentaireRepository.findAll();
+	public Comment findOneComment(Long id) {
+		return CommentRepository.findCommentById(id);
 	}
 
 	@Override
-	public Comment findOneCommentaire(Long id) {
-		return CommentaireRepository.findCommentaireById(id);
+	public Comment saveComment(Comment Comment) {
+		return  CommentRepository.save(Comment);
 	}
 
 	@Override
-	public Comment saveCommentaire(Comment Commentaire) {
-		return  CommentaireRepository.save(Commentaire);
+	public List<Comment> findAllComment() {
+		// TODO Auto-generated method stub
+		return CommentRepository.findAll();
 	}
 
 

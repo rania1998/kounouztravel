@@ -38,7 +38,6 @@ public class UsersController {
 	@RequestMapping(method = RequestMethod.POST, value = "/Users/saveUsers")
 	public void saveUsers(@RequestBody Users Users) {
 		UsersService.saveUsers(Users);
-
 	}
 
 

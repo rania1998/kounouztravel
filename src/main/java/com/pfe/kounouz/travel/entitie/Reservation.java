@@ -1,13 +1,18 @@
 package com.pfe.kounouz.travel.entitie;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -43,5 +48,16 @@ public class Reservation {
 
 	@Enumerated
 	private Status Status;
+	
+	//@ManyToMany(mappedBy="reservation", fetch=FetchType.EAGER)
+	//@JoinTable(name="ProcessInstance",
+	//joinColumns = { @JoinColumns ( name="Reservation_id")},
+	//inverseJoinColumns = { @JoinColumns ( name="Offer_id")})
+	// private List<Offer> Offer ;
+	@ManyToOne
+	private ProcessInstance cProcessInstancelient;
+
+	@ManyToMany
+	 private List<Users> Users ;
 
 }

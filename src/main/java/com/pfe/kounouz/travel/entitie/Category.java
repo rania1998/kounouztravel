@@ -23,15 +23,20 @@ public class Category {
 	@Column(name = "id")
 	private Long id;
 	
+	@Column(name = "name")
+	 private String name;
+	
 	@Column(name = "description")
 	 private String description;
 	
-	@Column(name = "name")
-	 private String name;
 	
 	@Column(name = "travel")
 	 private String travel;
 	
 	@Column(name = "accommondation")
 	 private String  accommondation;
+	
+	@Column(name = "type")
+	private String type;
+	
 }

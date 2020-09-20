@@ -19,27 +19,27 @@ public class CommentController {
 	
 
 	@Autowired
-	private CommentService  CommentaireService;
+	private CommentService  CommentService;
 
-	@RequestMapping(value = "/Commentaire/CommentaireManager", method = RequestMethod.GET)
+	@RequestMapping(value = "/Comment/CommentManager", method = RequestMethod.GET)
 	public List<Comment> findAll() {
-		return CommentaireService.findAllCommentaire();
+		return CommentService.findAllComment();
 	}
 
-	@RequestMapping(value = "/Commentaire/CommentaireById/{id}", method = RequestMethod.GET)
-	public Comment getCommentaireById(@PathVariable("id") Long id) {
-		return CommentaireService.findOneCommentaire(id);
+	@RequestMapping(value = "/Comment/CommentById/{id}", method = RequestMethod.GET)
+	public Comment getCommenteById(@PathVariable("id") Long id) {
+		return CommentService.findOneComment(id);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/Commentaire/deleteCommentaire")
-	public void deleteUser(@RequestBody Comment Commentaire) {
-		CommentaireService.deleteCommentaire(Commentaire);
+	@RequestMapping(method = RequestMethod.POST, value = "/Comment/deleteComment")
+	public void deleteComment(@RequestBody Comment comment) {
+		CommentService.deleteComment(comment);
 
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/Commentaire/saveCommentaire")
-	public void saveCommentaire(@RequestBody Comment Commentaire) {
-		CommentaireService.saveCommentaire(Commentaire);
+	@RequestMapping(method = RequestMethod.POST, value = "/Comment/saveComment")
+	public void saveComment(@RequestBody Comment Comment) {
+		CommentService.saveComment(Comment);
 
 	}
 
